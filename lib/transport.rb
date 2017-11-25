@@ -1,7 +1,12 @@
 def transport(source)
-  array = source.split("\n").map {|s| s.split(" ")}
+  rows = build_rows_from(source)
+  transpose_rows(rows)
+end
 
-  transported_array = array.transpose
+def build_rows_from(source)
+  source.to_s.split("\n").map { |row| row.split(" ") }
+end
 
-  transported_array.map {|s| s.join(" ")}.join("\n")
+def transpose_rows(rows)
+  rows.transpose.map { |row| row.join(" ") }.join("\n")
 end
