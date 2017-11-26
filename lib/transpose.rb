@@ -1,4 +1,4 @@
-def transport(source)
+def transpose(source)
   array = source.split("\n").map {|s| s.split(" ")}
   rows_count = array.first.count
 
