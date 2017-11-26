@@ -1,11 +1,14 @@
 def transpose(source)
-  array = source.split("\n").map {|s| s.split(" ")}
-  rows_count = array.first.count
+  transposed_hash = transposed_hash_of(source)
+  string_of(transposed_hash)
+end
 
-  transported_array = []
-  0.upto(rows_count - 1) do |i|
-    transported_array << array.map {|a| a[i]}
-  end
+private
 
-  transported_array.map {|s| s.join(" ")}.join("\n")
+def transposed_hash_of(source)
+  source.split("\n").map(&:split).transpose
+end
+
+def string_of(transposed_hash)
+  transposed_hash.map{|a| a.join("\s")}.join("\n")
 end
