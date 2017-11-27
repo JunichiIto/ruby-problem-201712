@@ -32,4 +32,11 @@ class TransportTest < MiniTest::Test
 
     assert_equal output, transport(input)
   end
+
+  def test_transport_with_blank_string
+    input = ""
+    output = ""
+
+    assert_equal output, transport(input)
+  end
 end
