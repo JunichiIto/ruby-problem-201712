@@ -25,4 +25,11 @@ class TransportTest < MiniTest::Test
       transport(input)
     end
   end
+
+  def test_transport_with_nil
+    input = nil
+    output = ""
+
+    assert_equal output, transport(input)
+  end
 end
