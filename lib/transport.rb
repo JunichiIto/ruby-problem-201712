@@ -1,11 +1,27 @@
-def transport(source)
-  array = source.split("\n").map {|s| s.split(" ")}
-  rows_count = array.first.count
+# require 'stringio'
 
-  transported_array = []
-  0.upto(rows_count - 1) do |i|
-    transported_array << array.map {|a| a[i]}
+def transport(source)
+  transported_array =
+    source
+      .lines
+      .collect(&:split)
+      .transpose
+      .map(&joinNumber)
+
+  output(transported_array)
+end
+
+private
+
+  def joinNumber
+    lambda { |num| num.join(' ') }
   end
 
-  transported_array.map {|s| s.join(" ")}.join("\n")
-end
+  def output(rows)
+    rows.join("\n")
+
+    # This code failed test
+    # io = StringIO.new
+    # io.puts rows
+    # io.string
+  end
