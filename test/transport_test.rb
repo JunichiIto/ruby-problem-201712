@@ -27,7 +27,5 @@ class TransportTest < MiniTest::Test
       3 6 9 12
     EOS
     assert_equal expect, transport(input)
-
-    # assert_equal "1 4\n2 5\n3 6", transport("1 2\r\n3 4\r5 6")
   end
 end
