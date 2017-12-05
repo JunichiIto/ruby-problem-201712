@@ -1,11 +1,11 @@
 def transport(source)
-  array = source.split("\n").map {|s| s.split(" ")}
-  rows_count = array.first.count
+  matrix_to_string(string_to_matrix(source).transpose)
+end
 
-  transported_array = []
-  0.upto(rows_count - 1) do |i|
-    transported_array << array.map {|a| a[i]}
-  end
+def string_to_matrix(matrix_string)
+  matrix_string.lines.map {|row_string| row_string.split(" ")}
+end
 
-  transported_array.map {|s| s.join(" ")}.join("\n")
+def matrix_to_string(matrix_array)
+  matrix_array.map {|row_array| row_array.join(" ")}.join("\n")
 end
