@@ -1,4 +1,4 @@
 def transport(source)
-  array = source.split("\n").map {|s| s.split(" ")}
-  array.transpose.map {|s| s.join(" ")}.join("\n")
+  matrix = source.split("\n").map {|s| s.split(" ")}
+  matrix.transpose.map {|s| s.join(" ")}.join("\n")
 end
