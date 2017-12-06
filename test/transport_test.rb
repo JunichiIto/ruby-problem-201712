@@ -1,5 +1,4 @@
-require 'minitest/autorun'
-require './lib/transport'
+require 'test_helper'
 
 class TransportTest < MiniTest::Test
   def test_transport
