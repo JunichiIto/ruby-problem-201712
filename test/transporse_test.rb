@@ -1,14 +1,14 @@
 require 'minitest/autorun'
-require './lib/transport'
+require './lib/transporse'
 
-class TransportTest < MiniTest::Test
-  def test_transport
+class TransporseTest < MiniTest::Test
+  def test_transporse
     input = "1 2 3\n4 5 6\n7 8 9"
     output = "1 4 7\n2 5 8\n3 6 9"
-    assert_equal output, transport(input)
+    assert_equal output, transporse(input)
 
     input = "1 2 3\n4 5 6\n7 8 9\n10 11 12"
     output = "1 4 7 10\n2 5 8 11\n3 6 9 12"
-    assert_equal output, transport(input)
+    assert_equal output, transporse(input)
   end
 end
