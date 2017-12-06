@@ -1,13 +1,13 @@
-def transport(source)
+def transporse(source)
   two_dimensional_arrays = string_to_arrays(source)
-  transported_arrays = two_dimensional_arrays.transpose
-  arrays_to_string(transported_arrays)
+  transporsed_arrays = two_dimensional_arrays.transpose
+  arrays_to_string(transporsed_arrays)
 end
 
 private
 
 def string_to_arrays(source)
-  source.split("\n").map(&:split)
+  source.lines.map(&:split)
 end
 
 def arrays_to_string(arrays)
