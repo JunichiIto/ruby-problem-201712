@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require './lib/transport'
 
-class TransportTest < MiniTest::Test
-  def test_transport
+class Transpose < MiniTest::Test
+  def test_transpose
     input = <<~EOS
       1 2 3
       4 5 6
@@ -16,7 +16,7 @@ class TransportTest < MiniTest::Test
     EOS
 
     # <~~ 記法だと末尾に改行文字(\n)が入るため #String#chomp で取り除く
-    assert_equal output.chomp, transport(input)
+    assert_equal output.chomp, transpose(input)
 
     input = <<~EOS
       1 2 3
@@ -31,6 +31,6 @@ class TransportTest < MiniTest::Test
       3 6 9 12
     EOS
 
-    assert_equal output.chomp, transport(input)
+    assert_equal output.chomp, transpose(input)
   end
 end

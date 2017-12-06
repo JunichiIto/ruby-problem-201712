@@ -1,11 +1,4 @@
-def transport(source)
-  array = source.split("\n").map {|s| s.split(" ")}
-  rows_count = array.first.count
-
-  transported_array = []
-  0.upto(rows_count - 1) do |i|
-    transported_array << array.map {|a| a[i]}
-  end
-
-  transported_array.map {|s| s.join(" ")}.join("\n")
+def transpose(source)
+  array = source.split("\n").map { |nums| nums.split(" ") }
+  array.transpose.map { |nums| nums.join(" ") }.join("\n")
 end
