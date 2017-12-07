@@ -26,5 +26,6 @@ class TransportTest < MiniTest::Test
       2 5 8 11
       3 6 9 12
     EOS
+    assert_equal expect, transport(input)
   end
 end
